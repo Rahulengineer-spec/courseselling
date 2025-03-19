@@ -123,10 +123,7 @@ export function Navbar() {
               </>
             )}
           </div>
-
-
-          //add wonderful footer
-          
+    
 
           {/* Mobile Menu Toggle */}
           <Button
