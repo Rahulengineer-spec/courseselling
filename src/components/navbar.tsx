@@ -42,6 +42,11 @@ export function Navbar() {
                 Learning Paths
               </Button>
             </Link>
+            <Link to="/dashboard">
+              <Button variant="ghost" className="text-gray-700 hover:text-blue-600 text-base">
+                Dashboard
+              </Button>
+            </Link>
           </div>
 
           {/* Search Bar */}
@@ -123,7 +128,6 @@ export function Navbar() {
               </>
             )}
           </div>
-    
 
           {/* Mobile Menu Toggle */}
           <Button
@@ -157,13 +161,13 @@ export function Navbar() {
                   Learning Paths
                 </Button>
               </Link>
+              <Link to="/dashboard">
+                <Button variant="ghost" className="w-full text-left text-gray-700 hover:text-blue-600">
+                  Dashboard
+                </Button>
+              </Link>
               {user ? (
                 <>
-                  <Link to="/dashboard">
-                    <Button variant="ghost" className="w-full text-left text-gray-700 hover:text-blue-600">
-                      Dashboard
-                    </Button>
-                  </Link>
                   <Link to="/profile">
                     <Button variant="ghost" className="w-full text-left text-gray-700 hover:text-blue-600">
                       Profile
