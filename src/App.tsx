@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { Navbar } from './components/navbar'; // Matches your confirmed location
+import { Navbar } from './components/navbar';
 import { HomePage } from './pages/home';
 import { CoursesPage } from './pages/courses';
 import { CourseDetailPage } from './pages/courses/[id]';
-import { DashboardPage } from './pages/dashboard'; // Matches your existing import
+import { DashboardPage } from './pages/dashboard'; // Single import, assuming file is 'dashboard.tsx'
 import { PricingPage } from './pages/pricing';
 import { LearningPathsPage } from './pages/LearningPathsPage';
 import { LearningPathDetailPage } from './pages/LearningPathDetailPage';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { supabase } from './lib/supabase';
 import { useAuthStore } from './lib/store';
-import {dashboard} from './pages/dashboard';
 
 function App() {
   const { setUser } = useAuthStore();
@@ -54,7 +53,7 @@ function App() {
           <Route path="/courses/:id" element={<CourseDetailPage />} />
           <Route path="/learning-paths" element={<LearningPathsPage />} />
           <Route path="/learning-paths/:id" element={<LearningPathDetailPage />} />
-          <Route path="/dashboard/edit" element={<DashboardPage />} />
+          <Route path="/dashboard/edit" element={<DashboardPage />} /> {/* Unprotected edit route */}
           <Route
             path="/dashboard"
             element={
