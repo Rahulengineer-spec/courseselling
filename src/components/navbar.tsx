@@ -7,10 +7,10 @@ import { useAuthStore } from '@/lib/store';
 import { supabase } from '@/lib/supabase';
 
 export function Navbar() {
-  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
   const { user, setUser } = useAuthStore();
 
   const handleLogout = async () => {
@@ -83,15 +83,6 @@ export function Navbar() {
                         onClick={() => setIsUserDropdownOpen(false)}
                       >
                         Dashboard
-                      </Button>
-                    </Link>
-                    <Link to="/profile">
-                      <Button
-                        variant="ghost"
-                        className="w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50"
-                        onClick={() => setIsUserDropdownOpen(false)}
-                      >
-                        Profile
                       </Button>
                     </Link>
                     <Button
@@ -167,20 +158,13 @@ export function Navbar() {
                 </Button>
               </Link>
               {user ? (
-                <>
-                  <Link to="/profile">
-                    <Button variant="ghost" className="w-full text-left text-gray-700 hover:text-blue-600">
-                      Profile
-                    </Button>
-                  </Link>
-                  <Button
-                    variant="outline"
-                    className="w-full rounded-full"
-                    onClick={handleLogout}
-                  >
-                    Log Out
-                  </Button>
-                </>
+                <Button
+                  variant="outline"
+                  className="w-full rounded-full"
+                  onClick={handleLogout}
+                >
+                  Log Out
+                </Button>
               ) : (
                 <>
                   <Button

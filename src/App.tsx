@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { Navbar } from './components/navbar'; // Matches your working older version
-import { HomePage } from './pages/home'; // Matches your older version
-import { CoursesPage } from './pages/courses'; // Matches your older version
-import { CourseDetailPage } from './pages/courses/[id]'; // Matches your older version
-import { DashboardPage } from './pages/dashboard'; // Matches your older version
-import { PricingPage } from './pages/pricing'; // Matches your older version
-import { LearningPathsPage } from './pages/LearningPathsPage'; // Assumes this file exists
-import { LearningPathDetailPage } from './pages/LearningPathDetailPage'; // New page from enhancements
+import { Navbar } from './components/navbar'; // Matches your confirmed location
+import { HomePage } from './pages/home';
+import { CoursesPage } from './pages/courses';
+import { CourseDetailPage } from './pages/courses/[id]';
+import { DashboardPage } from './pages/dashboard'; // Matches your existing import
+import { PricingPage } from './pages/pricing';
+import { LearningPathsPage } from './pages/LearningPathsPage';
+import { LearningPathDetailPage } from './pages/LearningPathDetailPage';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { supabase } from './lib/supabase';
 import { useAuthStore } from './lib/store';
+import {dashboard} from './pages/dashboard';
 
 function App() {
   const { setUser } = useAuthStore();
@@ -53,6 +54,7 @@ function App() {
           <Route path="/courses/:id" element={<CourseDetailPage />} />
           <Route path="/learning-paths" element={<LearningPathsPage />} />
           <Route path="/learning-paths/:id" element={<LearningPathDetailPage />} />
+          <Route path="/dashboard/edit" element={<DashboardPage />} />
           <Route
             path="/dashboard"
             element={
@@ -62,11 +64,19 @@ function App() {
             }
           />
           <Route path="/pricing" element={<PricingPage />} />
-          <Route path="*" element={<div>404 Not Found</div>} />
+          <Route
+            path="*"
+            element={
+              <div className="min-h-screen flex items-center justify-center text-gray-600">
+                404 - Page Not Found
+              </div>
+            }
+          />
         </Routes>
-        <Toaster />
+        <Toaster position="top-center" />
       </div>
     </Router>
   );
 }
+
 export default App;

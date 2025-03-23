@@ -139,4 +139,75 @@ export const mockCourses: Course[] = [
     ],
     updatedAt: '2024-03-12',
   },
+]
+// Add more sample courses
+export const mockCourse = mockCourses[0];
+export const mockCourseChapters = mockCourses[0].chapters;
+export const mockCourseFeatures = mockCourses[0].features;
+export const mockInstructor = mockCourses[0].instructor;
+export const mockCourseResources = [
+  {
+    id: 'res1',
+    title: 'HTML Cheat Sheet',
+    type: 'PDF',
+    url: 'https://example.com/html-cheat-sheet.pdf',
+  },
+  {
+    id: 'res2',
+    title: 'CSS Flexbox Guide',
+    type: 'Video',
+    url: 'https://example.com/css-flexbox-guide.mp4',
+  },
+  {
+    id: 'res3',
+    title: 'JavaScript ES6 Features',
+    type: 'Article',
+    url: 'https://example.com/javascript-es6-features.html',
+  },
 ];
+export const mockCourseReviews = [
+  {
+    id: 'rev1',
+    user: {
+      id: 'user1',
+      name: 'Alice Smith',
+      avatar: 'https://images.unsplash.com/photo-1502685104226-e9b3c1f0e4a5?w=400',
+    },
+    rating: 5,
+    comment: 'This course was amazing! I learned so much and the projects were really fun.',
+    date: '2024-03-01',
+  },
+  {
+    id: 'rev2',
+    user: {
+      id: 'user2',
+      name: 'Bob Johnson',
+      avatar: 'https://images.unsplash.com/photo-1502767085884-e9b3c1f0e4a5?w=400',
+    },
+    rating: 4,
+    comment: 'Great course, but I wish there were more hands-on projects.',
+    date: '2024-03-05',
+  },
+  {
+    id: 'rev3',
+    user: {
+      id: 'user3',
+      name: 'Charlie Brown',
+      avatar: 'https://images.unsplash.com/photo-1502767085884-e9b3c1f0e4a5?w=400',
+    },
+    rating: 4.5,
+    comment: 'The instructor was very knowledgeable and the content was well-structured.',
+    date: '2024-03-10',
+  },
+  {
+    id: 'rev4',
+    user: {
+      id: 'user4',
+      name: 'David Wilson',
+      avatar: 'https://images.unsplash.com/photo-1502767085884-e9b3c1f0e4a5?w=400',
+    },
+    rating: 5,
+    comment: 'I loved the course! The projects were challenging but rewarding.',
+    date: '2024-03-12',
+    },
+  ];
